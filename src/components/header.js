@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <div>
          <ul>
-            <a href="/home/">Home</a>
+            <a href="/">Home</a>
             <a href="/addorders/">Orders</a>
             <a href="/inprogress/">In Progress</a>
             <a href="/pending/">Pending Orders</a>

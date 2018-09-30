@@ -22,12 +22,42 @@ analytics
 */
 
 class App extends Component {
+   constructor(){
+      super();
+      this.state ={
+      orders:[
+            {
+               orderName: 'rsaik',
+               customerName: 'coolguydinesh',
+               Description: 'rasik',
+               dueDate: '20/02/2019',
+               orderDate: '05/21/2041',
+               status: 'Pending'
+            },
+            {
+               orderName: 'raj',
+               customerName: 'coolguydinesh',
+               Description: 'rasik',
+               dueDate: '20/02/2019',
+               orderDate: '05/21/2041',
+               status: 'Pending'
+            }
+         ],
+      customers:[
+         {
+            customer_name :'rasik',
+            phone_number: '999999999',
+            adderss: 'this is my address'
+         }
+      ]
+      }
+   }
   render() {
     return (
       <BrowserRouter>
            <div className="App">
               <Header/>
-              <Route exact path='/home/' component={Home}/>
+              <Route exact path='/' render={(props) => <Home something="oonr" customers={this.state.customers} orders={this.state.orders}/>}/>
               <Route exact path='/addorders/' render={(props) => <AddOrder something="oonr"/>}/>
               <Route exact path='/inprogress/' component={InProgressOrders}/>
               <Route exact path='/pending/' component={PendingOrders}/>

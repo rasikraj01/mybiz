@@ -16,7 +16,6 @@ class Customers extends Component {
       })
    }
    handleNewCustomer = (data) =>{
-      // this.setState({customers : data })
       let new_state = this.state.customers;
       new_state.push(data);
 
@@ -32,8 +31,9 @@ class Customers extends Component {
       <div>
          {(this.state.addCustomer && <AddCustomer updateCustomerList={this.handleNewCustomer}/>) ||
             <button onClick={this.handleAddCustomerForm}>Add Customer</button>}
+
          {customerArrayBool && this.state.customers.map((customerData, key) =>
-          (<IndividualCustomer name={customerData.customer_name} phone={customerData.phone_number} adderss={customerData.aderss}/>))}
+          (<IndividualCustomer name={customerData.customer_name} phone={customerData.phone_number} adderss={customerData.aderss} key={key}/>))}
       </div>
     );
   }

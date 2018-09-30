@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class IndividualCustomer extends Component {
   render() {
     return (
-      <li>
+      <li key={this.props.index}>
          {this.props.name}
       </li>
     );
