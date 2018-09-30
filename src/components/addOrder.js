@@ -1,0 +1,42 @@
+import React, { Component } from 'react';
+
+class addOrders extends Component {
+   constructor(){
+      super();
+
+      this.state = {
+            orderName: '',
+            customerName: '',
+            Description: '',
+            dueDate: '',
+            orderDate: ''
+      }
+   }
+   handleInputChange = (e) => {
+      console.log(e.target.value);
+      this.setState({ [e.target.name]: e.target.value });
+   }
+   handleFormSubmit = (e) => {
+      e.preventDefault();
+      let date =  new Date();
+      this.setState({
+         customerName: 'Mast Aadmi',
+         orderDate : date
+      })
+      console.log(this.state);
+   }
+  render() {
+    return (
+      <div>
+         <form onSubmit={this.handleFormSubmit}>
+            <input type="text" placeholder="Name" name="orderName" onChange={this.handleInputChange}/>
+            <input type="text" placeholder="Description" name="Description" onChange={this.handleInputChange}/>
+            <input type="date" placeholder="DueDate" name="dueDate" onChange={this.handleInputChange}/>
+            <input type="submit"/>
+         </form>
+      </div>
+    );
+  }
+}
+
+export default addOrders;

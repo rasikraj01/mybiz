@@ -3,7 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Header from './components/header.js';
 import Home from './components/home.js';
-import AddOrders from './components/addOrders.js';
+import AddOrder from './components/addOrder.js';
 import InProgressOrders from './components/inProgressOrders.js';
 import PendingOrders from './components/pendingOrders.js';
 import DeliveredOrders from './components/deliveredOrders.js';
@@ -27,8 +27,8 @@ class App extends Component {
       <BrowserRouter>
            <div className="App">
               <Header/>
-              <Route exact path='/' component={Home}/>
-              <Route exact path='/addorders/' component={AddOrders}/>
+              <Route exact path='/home/' component={Home}/>
+              <Route exact path='/addorders/' render={(props) => <AddOrder something="oonr"/>}/>
               <Route exact path='/inprogress/' component={InProgressOrders}/>
               <Route exact path='/pending/' component={PendingOrders}/>
               <Route exact path='/delivered/' component={DeliveredOrders}/>
