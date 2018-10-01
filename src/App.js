@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
+import './css/app.css';
+
 import Header from './components/header.js';
 import Home from './components/home.js';
 import InProgressOrders from './components/inProgressOrders.js';
@@ -8,7 +10,6 @@ import PendingOrders from './components/pendingOrders.js';
 import DeliveredOrders from './components/deliveredOrders.js';
 import Customers from './components/customers.js';
 import Analytics from './components/analytics.js';
-
 
 /*
 TODO:
