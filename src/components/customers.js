@@ -29,11 +29,11 @@ class Customers extends Component {
      let customerArrayBool = (this.state.customers === []) ? false : true;
     return (
       <div>
-         {(this.state.addCustomer && <AddCustomer updateCustomerList={this.handleNewCustomer}/>) ||
+         {(this.state.addCustomer && <AddCustomer updateCustomerList={this.props.handleCustomerUpdate}/>) ||
             <button onClick={this.handleAddCustomerForm}>Add Customer</button>}
 
-         {customerArrayBool && this.state.customers.map((customerData, key) =>
-          (<IndividualCustomer name={customerData.customer_name} phone={customerData.phone_number} adderss={customerData.aderss} key={key}/>))}
+         {customerArrayBool && this.props.customers.map((customerData, key) =>
+          (<IndividualCustomer name={customerData.customerName} phone={customerData.phone_number} adderss={customerData.aderss} key={key}/>))}
       </div>
     );
   }

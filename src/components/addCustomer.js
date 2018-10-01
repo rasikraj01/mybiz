@@ -4,8 +4,8 @@ class AddCustomer extends Component {
    constructor(){
       super();
       this.state ={
-         customer_name :'',
-         phone_number: '',
+         customerName :'',
+         phoneNumber: '',
          adderss: ''
       }
    }
@@ -17,14 +17,14 @@ class AddCustomer extends Component {
       console.log(this.state);
       this.props.updateCustomerList(this.state);
    }
-  render() {
+   render() {
     return (
       <div>
          <form onSubmit={this.handleCustomerFormSubmit}>
             <label>Customer Name :</label>
-            <input type="text" name="customer_name" onChange={this.handleInputChange}/>
+            <input type="text" name="customerName" onChange={this.handleInputChange}/>
             <label>Phone Number :</label>
-            <input type="text" name="phone_number" onChange={this.handleInputChange}/>
+            <input type="text" name="phoneNumber" onChange={this.handleInputChange}/>
             <label>Adderss :</label>
             <input type="text" name="adderss" onChange={this.handleInputChange}/>
             <input type="submit" name="submit_customer_Data"/>

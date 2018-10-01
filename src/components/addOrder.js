@@ -9,7 +9,8 @@ class addOrders extends Component {
             customerName: '',
             Description: '',
             dueDate: '',
-            orderDate: ''
+            orderDate: '',
+            status: ''
       }
    }
    handleInputChange = (e) => {
@@ -18,12 +19,13 @@ class addOrders extends Component {
    }
    handleFormSubmit = (e) => {
       e.preventDefault();
-      let date =  new Date();
+      //let date =  new Date();
       this.setState({
-         customerName: 'Mast Aadmi',
-         orderDate : date
+         orderDate : '20-30-2019',
+         status: 'Pending'
       })
       console.log(this.state);
+      this.props.handleOrderUpdate(this.state);
    }
   render() {
     return (
@@ -32,6 +34,11 @@ class addOrders extends Component {
             <input type="text" placeholder="Name" name="orderName" onChange={this.handleInputChange}/>
             <input type="text" placeholder="Description" name="Description" onChange={this.handleInputChange}/>
             <input type="date" placeholder="DueDate" name="dueDate" onChange={this.handleInputChange}/>
+            <select name="customerName" onChange={this.handleInputChange}>
+               {this.props.customers && this.props.customers.map((customer, key) => (
+                  <option key={key}>{customer.customerName}</option>
+               ))}
+            </select>
             <input type="submit"/>
          </form>
       </div>

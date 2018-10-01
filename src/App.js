@@ -3,7 +3,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Header from './components/header.js';
 import Home from './components/home.js';
-import AddOrder from './components/addOrder.js';
 import InProgressOrders from './components/inProgressOrders.js';
 import PendingOrders from './components/pendingOrders.js';
 import DeliveredOrders from './components/deliveredOrders.js';
@@ -15,6 +14,7 @@ import Analytics from './components/analytics.js';
 TODO:
 add custoners /
 add orders fields: {customer_name, delivery date , order date , description / price} /
+PENDING ENUM
 inprogress order /
 pending orders /
 delivered orders /
@@ -45,24 +45,44 @@ class App extends Component {
          ],
       customers:[
          {
-            customer_name :'rasik',
-            phone_number: '999999999',
+            customerName :'rasik',
+            phoneNumber: '999999999',
+            adderss: 'this is my address'
+         },
+         {
+            customerName :'rasikraj',
+            phoneNumber: '999999999',
             adderss: 'this is my address'
          }
       ]
       }
+   }
+   handleOrderUpdate = (data) =>{
+         let new_order_state = this.state.orders;
+         new_order_state.push(data);
+         this.setState({
+            orders : new_order_state
+         })
+         console.log(this.state.orders);
+   }
+   handleCustomerUpdate = (data) => {
+      let new_customer_state = this.state.customers;
+      new_customer_state.push(data);
+      this.setState({
+         customers: new_customer_state
+      })
+
    }
   render() {
     return (
       <BrowserRouter>
            <div className="App">
               <Header/>
-              <Route exact path='/' render={(props) => <Home something="oonr" customers={this.state.customers} orders={this.state.orders}/>}/>
-              <Route exact path='/addorders/' render={(props) => <AddOrder something="oonr"/>}/>
+              <Route exact path='/' render={(props) => <Home orders={this.state.orders} customers={this.state.customers} handleOrderUpdate={this.handleOrderUpdate}/>}/>
               <Route exact path='/inprogress/' component={InProgressOrders}/>
               <Route exact path='/pending/' component={PendingOrders}/>
               <Route exact path='/delivered/' component={DeliveredOrders}/>
-              <Route exact path='/customers/' component={Customers}/>
+              <Route exact path='/customers/' render={(props) => <Customers customers={this.state.customers} handleCustomerUpdate={this.handleCustomerUpdate}/>}/>
               <Route exact path='/analytics/' component={Analytics}/>
            </div>
       </BrowserRouter>

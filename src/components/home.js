@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import AddOrder from './addOrder';
 
 class Home extends Component {
    constructor(){
       super();
       this.state = {
          customers :[],
-         orders: []
+         orders: [],
+         addOrder: false
       }
    }
    componentDidMount(){
@@ -14,10 +16,16 @@ class Home extends Component {
          orders : this.props.orders,
       })
    }
+   handleAddOrderFormTrigger = () => {
+      this.setState({
+         addOrder : true
+      })
+   }
   render() {
     return (
       <div>
          This is home.
+         {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate}/>) || <button onClick={this.handleAddOrderFormTrigger}>Add Order</button>}
          {this.state.orders && this.state.orders.map((data, index) => (
             <li key={index}>
                Order : {data.orderName}<br/>
