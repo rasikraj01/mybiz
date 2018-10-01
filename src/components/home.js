@@ -21,11 +21,15 @@ class Home extends Component {
          addOrder : true
       })
    }
+   handleHideorderForm = () => {
+      this.setState({
+         addOrder : false
+      })
+   }
   render() {
     return (
       <div>
-         This is home.
-         {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate}/>) || <button onClick={this.handleAddOrderFormTrigger}>Add Order</button>}
+         {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <button onClick={this.handleAddOrderFormTrigger}>Add Order</button>}
          {this.state.orders && this.state.orders.map((data, index) => (
             <li key={index}>
                Order : {data.orderName}<br/>

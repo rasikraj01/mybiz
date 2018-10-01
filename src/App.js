@@ -36,12 +36,20 @@ class App extends Component {
                status: 'Pending'
             },
             {
+               orderName: 'rajinproger',
+               customerName: 'coolguydinesh',
+               Description: 'rasik',
+               dueDate: '20/02/2019',
+               orderDate: '05/21/2041',
+               status: 'InProgress'
+            },
+            {
                orderName: 'raj',
                customerName: 'coolguydinesh',
                Description: 'rasik',
                dueDate: '20/02/2019',
                orderDate: '05/21/2041',
-               status: 'Pending'
+               status: 'Delivered'
             }
          ],
       customers:[
@@ -80,9 +88,9 @@ class App extends Component {
            <div className="App">
               <Header/>
               <Route exact path='/' render={(props) => <Home orders={this.state.orders} customers={this.state.customers} handleOrderUpdate={this.handleOrderUpdate}/>}/>
-              <Route exact path='/inprogress/' component={InProgressOrders}/>
-              <Route exact path='/pending/' component={PendingOrders}/>
-              <Route exact path='/delivered/' component={DeliveredOrders}/>
+              <Route exact path='/inprogress/' render={(props) => <InProgressOrders orders={this.state.orders} handleOrderUpdate={this.handleOrderUpdate}/>}/>
+              <Route exact path='/pending/' render={(props) => <PendingOrders orders={this.state.orders} handleOrderUpdate={this.handleOrderUpdate}/>}/>
+              <Route exact path='/delivered/' render={(props) => <DeliveredOrders orders={this.state.orders} handleOrderUpdate={this.handleOrderUpdate}/>}/>
               <Route exact path='/customers/' render={(props) => <Customers customers={this.state.customers} handleCustomerUpdate={this.handleCustomerUpdate}/>}/>
               <Route exact path='/analytics/' component={Analytics}/>
            </div>

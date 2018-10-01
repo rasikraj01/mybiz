@@ -26,6 +26,7 @@ class addOrders extends Component {
       })
       console.log(this.state);
       this.props.handleOrderUpdate(this.state);
+      this.props.handleHideForm();
    }
   render() {
     return (
