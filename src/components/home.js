@@ -42,6 +42,7 @@ class Home extends Component {
                dueDate={order.dueDate}
                status={order.status}
                customers = {this.props.customers}
+               handleOrderEdit = {this.props.handleOrderEdit}
             />
          ))}
       </div>

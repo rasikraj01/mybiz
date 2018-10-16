@@ -14,7 +14,10 @@ class SingleOrder extends Component {
       console.log('edit on');
       this.setState({editMode : true});
    }
-
+   onFormSubmit = (data) =>{
+      this.props.handleOrderEdit(data);
+      this.setState({editMode: false});
+   }
   render() {
     return (
       <div>
@@ -28,6 +31,7 @@ class SingleOrder extends Component {
             orderDate={this.props.orderDate}
             dueDate={this.props.dueDate}
             status={this.props.status}
+            onFormSubmit = {this.onFormSubmit}
          />
          ) ||
          <li>

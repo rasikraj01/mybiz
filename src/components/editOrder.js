@@ -26,9 +26,7 @@ class EditOrder extends Component {
 
    handleEditSubmit = (e) => {
       e.preventDefault();
-      this.setState({
-         editMode: false
-      });
+      this.props.onFormSubmit(this.state); // toggles edit view -- off
       console.log(this.state);
    }
   render() {

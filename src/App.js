@@ -86,15 +86,20 @@ class App extends Component {
 
    }
    handleOrderEdit = (data) => {
-      let new_data = data;
-      console.log(new_data);
+      let on = this.state.orders.findIndex((element) =>  (element._id === data._id));
+      let old = this.state.orders;
+      console.log("from up" + this.state.orders[on]);
+      old[on] = data;
+      this.setState({
+         orders : old
+      });
    }
   render() {
     return (
       <BrowserRouter>
            <div className="App">
               <Header/>
-              <Route exact path='/' render={(props) => <Home orders={this.state.orders} customers={this.state.customers} handleOrderUpdate={this.handleOrderUpdate}/>}/>
+              <Route exact path='/' render={(props) => <Home orders={this.state.orders} customers={this.state.customers} handleOrderUpdate={this.handleOrderUpdate} handleOrderEdit={this.handleOrderEdit}/>}/>
               <Route exact path='/inprogress/' render={(props) => <InProgressOrders orders={this.state.orders} handleOrderUpdate={this.handleOrderUpdate}/>}/>
               <Route exact path='/pending/' render={(props) => <PendingOrders orders={this.state.orders} handleOrderUpdate={this.handleOrderUpdate}/>}/>
               <Route exact path='/delivered/' render={(props) => <DeliveredOrders orders={this.state.orders} handleOrderUpdate={this.handleOrderUpdate}/>}/>
