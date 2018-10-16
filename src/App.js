@@ -28,6 +28,7 @@ class App extends Component {
       this.state ={
       orders:[
             {
+               _id : 20,
                orderName: 'rsaik',
                customerName: 'coolguydinesh',
                Description: 'rasik',
@@ -36,6 +37,7 @@ class App extends Component {
                status: 'Pending'
             },
             {
+               _id : 201,
                orderName: 'rajinproger',
                customerName: 'coolguydinesh',
                Description: 'rasik',
@@ -44,6 +46,7 @@ class App extends Component {
                status: 'InProgress'
             },
             {
+               _id : 202,
                orderName: 'raj',
                customerName: 'coolguydinesh',
                Description: 'rasik',
@@ -81,6 +84,10 @@ class App extends Component {
          customers: new_customer_state
       })
 
+   }
+   handleOrderEdit = (data) => {
+      let new_data = data;
+      console.log(new_data);
    }
   render() {
     return (

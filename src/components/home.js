@@ -34,7 +34,8 @@ class Home extends Component {
          {this.state.orders && this.state.orders.map((order, index) => (
             <SingleOrder
                key={index}
-               OrderName={order.orderName}
+               _id= {order._id}
+               orderName={order.orderName}
                Description={order.Description}
                customerName={order.customerName}
                orderDate={order.orderDate}
