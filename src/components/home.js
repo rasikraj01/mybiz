@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddOrder from './addOrder';
+import SingleOrder from './singleOrder';
 
 class Home extends Component {
    constructor(){
@@ -30,14 +31,17 @@ class Home extends Component {
     return (
       <div>
          {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <button onClick={this.handleAddOrderFormTrigger}>Add Order</button>}
-         {this.state.orders && this.state.orders.map((data, index) => (
-            <li key={index}>
-               Order : {data.orderName}<br/>
-               Customer : {data.customerName}<br/>
-               Details : {data.Description}<br/>
-               Order Date : {data.orderDate} Due Date : {data.dueDate}
-               Status : {data.status}
-            </li>
+         {this.state.orders && this.state.orders.map((order, index) => (
+            <SingleOrder
+               key={index}
+               OrderName={order.orderName}
+               Description={order.Description}
+               customerName={order.customerName}
+               orderDate={order.orderDate}
+               dueDate={order.dueDate}
+               status={order.status}
+               customers = {this.props.customers}
+            />
          ))}
       </div>
     );
