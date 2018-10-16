@@ -11,18 +11,18 @@ class SingleOrder extends Component {
          }
       }
    }
-   componentWillMount(){
-      // this.setState({
-      //    updatedOrder : {
-      //       orderName: '',
-      //       customerName: '',
-      //       Description: '',
-      //       dueDate: '',
-      //       orderDate: '',
-      //       status: ''
-      //    }
-      // });
-      // console.log(this.props.orderName);
+   componentDidMount(){
+      this.setState({
+         updatedOrder : {
+            orderName: this.props.OrderName,
+            customerName: this.props.customerName,
+            Description: this.props.Description,
+            dueDate: this.props.dueDate,
+            orderDate: this.props.orderDate,
+            status: this.props.status
+         }
+      });
+      console.log(this.props.orderName);
    }
    handleInputChange = (e) => {
       console.log(e.target.value);
@@ -48,13 +48,15 @@ class SingleOrder extends Component {
          {(
          this.state.editMode &&
          <form onSubmit={this.handleEdit}>
-            <input type="text" placeholder="Name" name="orderName" onChange={this.handleInputChange} value={this.porps.OrderName}/>
-            <input type="text" placeholder="Description" name="Description" onChange={this.handleInputChange} value={this.porps.Description}/>
-            <input type="date" placeholder="DueDate" name="dueDate" onChange={this.handleInputChange} value={this.porps.dueDate}/>
-            <select name="customerName" onChange={this.handleInputChange}>
-               {this.props.customers && this.props.customers.map((customer, key) => (
-                  <option key={key}>{customer.customerName}</option>
-               ))}
+            <input type="text" placeholder="Name" name="orderName" onChange={this.handleInputChange} defaultValue={this.props.OrderName}/>
+            <input type="text" placeholder="Description" name="Description" onChange={this.handleInputChange} defaultValue={this.props.Description}/>
+            <input type="date" placeholder="DueDate" name="dueDate" onChange={this.handleInputChange} defaultValue={this.props.dueDate}/>
+            <input type="text" value={this.props.orderDate} name="orderDate" readOnly/>
+            <input type="text" value={this.props.customerName} name="customerName" readOnly/>
+            <select onChange={this.handleInputChange}>
+               <option>Pending</option>
+               <option>In Progress</option>
+               <option>Delivered</option>
             </select>
             <input type="submit"/>
          </form>

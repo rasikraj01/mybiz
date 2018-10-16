@@ -5,6 +5,7 @@ class addOrders extends Component {
       super();
 
       this.state = {
+            _id : null,
             orderName: '',
             customerName: '',
             Description: '',
@@ -22,11 +23,13 @@ class addOrders extends Component {
       //let date =  new Date();
       this.setState({
          orderDate : '20-30-2019',
-         status: 'Pending'
+         status: 'Pending',
+         _id : Math.floor(Math.random() * 10000000)
+      },() => {
+         console.log(this.state);
+         this.props.handleOrderUpdate(this.state);
+         this.props.handleHideForm();
       })
-      console.log(this.state);
-      this.props.handleOrderUpdate(this.state);
-      this.props.handleHideForm();
    }
   render() {
     return (
