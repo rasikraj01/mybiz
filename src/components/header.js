@@ -4,7 +4,7 @@ import '../css/header.css';
 class Header extends Component {
   render() {
     return (
-      <div>
+      <div className="navbar">
          <ul>
             <a href="/">Home</a>
             <a href="/inprogress/">In Progress</a>
