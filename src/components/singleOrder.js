@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EditOrder from './editOrder';
-
+import '../css/singleOrder.css';
 
 class SingleOrder extends Component {
    constructor(){
@@ -24,7 +24,7 @@ class SingleOrder extends Component {
    }
   render() {
     return (
-      <div>
+      <div className="singleOrder">
          {(
          this.state.editMode &&
          <EditOrder
@@ -39,12 +39,12 @@ class SingleOrder extends Component {
          />
          ) ||
          <li>
-            Order Name : {this.props.orderName}<br/>
-            Customer Name : {this.props.customerName}<br/>
-            Description : {this.props.Description}<br/>
-            Order Date :  {this.props.orderDate}<br/>
-            Due Date : {this.props.dueDate} <br/>
-            Status : {this.props.status} <br/>
+            <h2><span>Order Name : </span>{this.props.orderName}</h2>
+            <h2><span>Customer Name : </span>{this.props.customerName}</h2>
+            <h3>Description : {this.props.Description}</h3>
+            <h4>Order Date :  {this.props.orderDate}</h4>
+            <h4>Due Date : {this.props.dueDate} </h4>
+            <h4>Status : {this.props.status} </h4>
             <button onClick={this.handleToggleEdit}>Edit</button>
             <button onClick={this.handleOrderDelete}>Delete</button>
          </li>
