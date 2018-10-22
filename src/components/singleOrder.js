@@ -14,9 +14,13 @@ class SingleOrder extends Component {
       console.log('edit on');
       this.setState({editMode : true});
    }
-   onFormSubmit = (data) =>{
+   onFormSubmit = (data) => {
       this.props.handleOrderEdit(data);
       this.setState({editMode: false});
+   }
+
+   handleOrderDelete = () => {
+      console.log('delete triggered');
    }
   render() {
     return (
@@ -42,6 +46,7 @@ class SingleOrder extends Component {
             Due Date : {this.props.dueDate} <br/>
             Status : {this.props.status} <br/>
             <button onClick={this.handleToggleEdit}>Edit</button>
+            <button onClick={this.handleOrderDelete}>Delete</button>
          </li>
       }
 

@@ -13,13 +13,8 @@ import Analytics from './components/analytics.js';
 
 /*
 TODO:
-add custoners /
 add orders fields: {customer_name, delivery date , order date , description / price} /
 PENDING ENUM
-inprogress order /
-pending orders /
-delivered orders /
-analytics
 */
 
 class App extends Component {
@@ -88,10 +83,17 @@ class App extends Component {
    handleOrderEdit = (data) => {
       let on = this.state.orders.findIndex((element) =>  (element._id === data._id));
       let old = this.state.orders;
-      console.log("from up" + this.state.orders[on]);
+      console.log(this.state.orders[on]);
       old[on] = data;
       this.setState({
          orders : old
+      });
+   }
+   handleOrderDelete = (id) => {
+      let index = this.state.orders.findIndex((element) => (element._id === id));
+      let old = this.state.orders;
+      this.setState({
+         orders: old.filter(() => (old._id !== index))
       });
    }
   render() {
