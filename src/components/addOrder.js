@@ -35,7 +35,8 @@ class addOrders extends Component {
    }
   render() {
     return (
-      <div>
+      <div class="form">
+        <p>Add Order Details: </p>
          <form onSubmit={this.handleFormSubmit}>
             <input type="text" placeholder="Name" name="orderName" onChange={this.handleInputChange}/>
             <input type="text" placeholder="Description" name="Description" onChange={this.handleInputChange}/>
@@ -45,7 +46,7 @@ class addOrders extends Component {
                   <option key={key}>{customer.customerName}</option>
                ))}
             </select>
-            <input type="submit"/>
+            <input type="submit" class="submit"/>
          </form>
       </div>
     );
