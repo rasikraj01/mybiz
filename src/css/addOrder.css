@@ -1,4 +1,16 @@
-form input[type="text"]{
+.form{
    font-size: 14px;
    font-family: 'open sans';
+   /* background-color: black ; */
+}
+
+input{
+  width: 250px;
+  height: 25px;
+  color: #262F38;
+  margin: 5px;
+}
+
+.submit{
+  width: 50px;
 }
