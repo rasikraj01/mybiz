@@ -15,7 +15,7 @@ class DeliveredOrders extends Component {
    }
   render() {
     return (
-      <div>
+      <div className="ordersWrapper">
             {
                this.state.deliveredOrders && this.state.deliveredOrders
                .map((order, key) =>
