@@ -15,7 +15,7 @@ class InProgressOrders extends Component {
    }
   render() {
     return (
-      <div>
+      <div className="ordersWrapper">
          {
             this.state.inProgressOrders && this.state.inProgressOrders
             .map((order, key) =>

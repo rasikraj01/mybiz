@@ -15,7 +15,7 @@ class PendingOrders extends Component {
    }
    render() {
    return (
-      <div>
+      <div className="ordersWrapper">
          {
             this.state.PendingOrders && this.state.PendingOrders
             .map((order, key) =>
