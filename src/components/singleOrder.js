@@ -45,8 +45,8 @@ class SingleOrder extends Component {
             <h4>Order Date :  {this.props.orderDate}</h4>
             <h4>Due Date : {this.props.dueDate} </h4>
             <h4>Status : {this.props.status} </h4>
-            <button onClick={this.handleToggleEdit}>Edit</button>
-            <button onClick={this.handleOrderDelete}>Delete</button>
+            <button className="btnEdit" onClick={this.handleToggleEdit}>Edit</button>
+            <button className="btnDelete" onClick={this.handleOrderDelete}>Delete</button>
          </li>
       }
 
