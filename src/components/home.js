@@ -30,7 +30,7 @@ class Home extends Component {
   render() {
     return (
       <div className="ordersWrapper">
-         {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <button onClick={this.handleAddOrderFormTrigger}>Add Order</button>}
+         {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <div className="add-order-btn"><button onClick={this.handleAddOrderFormTrigger}>Add Order</button></div>}
          {this.state.orders && this.state.orders.map((order, index) => (
             <SingleOrder
                key={index}
