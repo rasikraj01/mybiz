@@ -36,7 +36,6 @@
     box-sizing: border-box;
     appearance: none;
     background-color: transparent;
-    border: 2px solid red;
     border-radius: 0.6em;
     color: white;
     cursor: pointer;
@@ -52,7 +51,16 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-    box-shadow: 0 0 40px 40px red inset;
+}
+
+.btnEdit {
+    border: 2px solid #29B6F6;
+    box-shadow: 0 0 40px 40px #03A9F4 inset;
+}
+
+.btnDelete {
+    border: 2px solid #FF5722;
+    box-shadow: 0 0 40px 40px #F4511E inset;
 }
 
 .singleOrder button:hover{
