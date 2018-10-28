@@ -2,3 +2,57 @@ form input[type="text"]{
    font-size: 14px;
    font-family: 'open sans';
 }
+
+.addOrderFormContainer {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.action-container {
+    margin: 20px 0;
+}
+
+form .field {
+    margin-bottom: 15px;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea, select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 20px;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
+}
+input:not([type]):focus, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=time]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus, select:focus {
+    border-bottom: 1px solid purple;
+    box-shadow: 0 1px 0 0 purple;
+}
+
+.action.primary {
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #000;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #000;
+    background-color: #fff;
+    transition: all 0.1s;
+}
+
+.action.primary:active, .action.primary:focus, .action.primary:hover {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}

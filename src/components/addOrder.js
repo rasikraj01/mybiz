@@ -35,17 +35,53 @@ class addOrders extends Component {
    }
   render() {
     return (
-      <div>
+      <div className="addOrderFormContainer">
          <form onSubmit={this.handleFormSubmit}>
-            <input type="text" placeholder="Name" name="orderName" onChange={this.handleInputChange}/>
-            <input type="text" placeholder="Description" name="Description" onChange={this.handleInputChange}/>
-            <input type="date" placeholder="DueDate" name="dueDate" onChange={this.handleInputChange}/>
-            <select name="customerName" onChange={this.handleInputChange}>
-               {this.props.customers && this.props.customers.map((customer, key) => (
-                  <option key={key}>{customer.customerName}</option>
-               ))}
-            </select>
-            <input type="submit"/>
+            < div className = "field orderName" >
+              < input type = "text"
+              placeholder = "Name"
+              name = "orderName"
+              onChange = {
+                this.handleInputChange
+              }
+              />
+            </div>
+            <div className="field description">
+              < input type = "text"
+              placeholder = "Description"
+              name = "Description"
+              onChange = {
+                this.handleInputChange
+              }
+              />
+            </div>
+            <div className="field duedate">
+                < input type = "date"
+                placeholder = "DueDate"
+                name = "dueDate"
+                onChange = {
+                  this.handleInputChange
+                }
+                />
+            </div>
+            <div className="field customername">
+                < select name = "customerName"
+                onChange = {
+                    this.handleInputChange
+                  } > {
+                    this.props.customers && this.props.customers.map((customer, key) => ( <
+                      option key = {
+                        key
+                      } > {
+                        customer.customerName
+                      } < /option>
+                    ))
+                  } <
+                  /select>
+            </div>
+            <div className="action-container" >
+              <input type="submit" className="action primary" />
+            </div>
          </form>
       </div>
     );
