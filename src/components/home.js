@@ -20,7 +20,8 @@ class Home extends Component {
       })
    }
   render() {
-    const { addOrder, orders } = this.state
+    let { addOrder} = this.state;
+    let {orders} = this.props;
     return (
       <div className="ordersWrapper">
          {(addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <div className="add-order-btn"><button onClick={this.handleAddOrderFormTrigger}>Add Order</button></div>}
