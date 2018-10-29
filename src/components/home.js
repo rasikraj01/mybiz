@@ -28,10 +28,11 @@ class Home extends Component {
       })
    }
   render() {
+    const { addOrder, orders } = this.state
     return (
       <div className="ordersWrapper">
-         {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <div className="add-order-btn"><button onClick={this.handleAddOrderFormTrigger}>Add Order</button></div>}
-         {this.state.orders && this.state.orders.map((order, index) => (
+         {(addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <div className="add-order-btn"><button onClick={this.handleAddOrderFormTrigger}>Add Order</button></div>}
+         {orders && orders.map((order, index) => (
             <SingleOrder
                key={index}
                _id= {order._id}
