@@ -89,10 +89,10 @@ class App extends Component {
          orders : old
       });
    }
-  
+
    handleOrderDelete = (id) => {
     let orders = this.state.orders.filter(order => order._id !== id);
-    
+
     this.setState({
       orders
     });
@@ -107,41 +107,41 @@ class App extends Component {
       <BrowserRouter>
            <div className="App">
               <Header/>
-              <Route 
-                exact 
-                path='/' 
-                render={(props) => <Home 
-                  orders={this.state.orders} 
-                  customers={this.state.customers} 
-                  handleOrderUpdate={this.handleOrderUpdate} 
-                  handleOrderDelete = {this.handleOrderDelete} 
+              <Route
+                exact
+                path='/'
+                render={(props) => <Home
+                  orders={this.state.orders}
+                  customers={this.state.customers}
+                  handleOrderUpdate={this.handleOrderUpdate}
+                  handleOrderDelete = {this.handleOrderDelete}
                   handleOrderEdit={this.handleOrderEdit} />} />
-              <Route 
-                exact 
-                path='/inprogress/' 
-                render={(props) => <InProgressOrders 
+              <Route
+                exact
+                path='/inprogress/'
+                render={(props) => <InProgressOrders
                   orders={this.filterByStatus('InProgress')}
                   handleOrderDelete = {this.handleOrderDelete}
                   handleOrderUpdate={this.handleOrderUpdate} />} />
-              <Route 
-                exact 
-                path='/pending/' 
-                render={(props) => <PendingOrders 
+              <Route
+                exact
+                path='/pending/'
+                render={(props) => <PendingOrders
                   orders={this.filterByStatus('Pending')}
                   handleOrderDelete = {this.handleOrderDelete}
                   handleOrderUpdate={this.handleOrderUpdate} />} />
-              <Route 
-                exact 
-                path='/delivered/' 
-                render={(props) => <DeliveredOrders 
+              <Route
+                exact
+                path='/delivered/'
+                render={(props) => <DeliveredOrders
                   orders={this.filterByStatus('Delivered')}
                   handleOrderDelete = {this.handleOrderDelete}
                   handleOrderUpdate={this.handleOrderUpdate} />} />
-              <Route 
-                exact 
+              <Route
+                exact
                 path='/customers/'
-                render={(props) => <Customers 
-                  customers={this.state.customers} 
+                render={(props) => <Customers
+                  customers={this.state.customers}
                   handleCustomerUpdate={this.handleCustomerUpdate} />} />
               <Route exact path='/analytics/' component={Analytics}/>
            </div>
