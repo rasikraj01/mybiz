@@ -6,16 +6,8 @@ class Home extends Component {
    constructor(){
       super();
       this.state = {
-         customers :[],
-         orders: [],
          addOrder: false
       }
-   }
-   componentDidMount(){
-      this.setState({
-         customers : this.props.customers,
-         orders : this.props.orders,
-      })
    }
    handleAddOrderFormTrigger = () => {
       this.setState({
@@ -44,6 +36,7 @@ class Home extends Component {
                status={order.status}
                customers = {this.props.customers}
                handleOrderEdit = {this.props.handleOrderEdit}
+               handleOrderDelete = {this.props.handleOrderDelete}
             />
          ))}
       </div>

@@ -8,6 +8,8 @@ class SingleOrder extends Component {
       this.state = {
          editMode : false
       }
+
+      this.handleOrderDelete = this.handleOrderDelete.bind(this);
    }
 
    handleToggleEdit = () => {
@@ -20,8 +22,9 @@ class SingleOrder extends Component {
    }
 
    handleOrderDelete = () => {
-      console.log('delete triggered');
+      this.props.handleOrderDelete(this.props._id);
    }
+   
   render() {
     return (
       <div className="singleOrder">
