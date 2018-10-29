@@ -20,15 +20,11 @@ form {
   margin: 10px;
 }
 .add-order-btn button {
-  box-sizing: border-box;
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid red;
-  border-radius: 0.6em;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-self: center;
+  margin: 0.5rem;
+  padding: 1em 1.5em;
+  background-color: #b16dbf;
+  border-radius: 5px;
+  color: #fff;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
@@ -38,9 +34,15 @@ form {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  box-shadow: 0 0 40px 40px red inset;
+  transition: all .5s;
 }
+
+.add-order-btn button:hover{
+  background-color: #fff;
+  color: #b16dbf;
+  cursor: pointer;
+}
+
 input:not([type]),
 input[type="text"],
 input[type="password"],

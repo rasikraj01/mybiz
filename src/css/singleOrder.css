@@ -29,33 +29,19 @@
 }
 .singleOrder button{
     float: left;
-    margin-top: 10px;
-    margin-right: 5px;
-
-
-    box-sizing: border-box;
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid red;
-    border-radius: 0.6em;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-self: center;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    padding: 1.2em 2.8em;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
+    margin: 0.5rem;
+    padding: 0.5em 1em;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-    box-shadow: 0 0 40px 40px red inset;
+    background-color: #b16dbf;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .5s;
 }
 
 .singleOrder button:hover{
-    color: #fff;
+    color: #b16dbf;
+    background-color: #fff;
     outline: 0;
   }
