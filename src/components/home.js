@@ -6,16 +6,8 @@ class Home extends Component {
    constructor(){
       super();
       this.state = {
-         customers :[],
-         orders: [],
          addOrder: false
       }
-   }
-   componentDidMount(){
-      this.setState({
-         customers : this.props.customers,
-         orders : this.props.orders,
-      })
    }
    handleAddOrderFormTrigger = () => {
       this.setState({
@@ -31,7 +23,7 @@ class Home extends Component {
     return (
       <div className="ordersWrapper">
          {(this.state.addOrder && <AddOrder customers={this.props.customers} handleOrderUpdate={this.props.handleOrderUpdate} handleHideForm={this.handleHideorderForm}/>) || <div className="add-order-btn"><button onClick={this.handleAddOrderFormTrigger}>Add Order</button></div>}
-         {this.state.orders && this.state.orders.map((order, index) => (
+         {this.props.orders && this.props.orders.map((order, index) => (
             <SingleOrder
                key={index}
                _id= {order._id}
@@ -43,6 +35,7 @@ class Home extends Component {
                status={order.status}
                customers = {this.props.customers}
                handleOrderEdit = {this.props.handleOrderEdit}
+               handleOrderDelete = {this.props.handleOrderDelete}
             />
          ))}
       </div>
