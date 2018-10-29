@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddCustomer from './addCustomer';
 import IndividualCustomer from './individualCustomer';
+import '../css/customer.css';
 
 class Customers extends Component {
    constructor(){
@@ -28,9 +29,9 @@ class Customers extends Component {
   render() {
      let customerArrayBool = (this.state.customers === []) ? false : true;
     return (
-      <div>
+      <div className="customer">
          {(this.state.addCustomer && <AddCustomer updateCustomerList={this.props.handleCustomerUpdate}/>) ||
-            <button onClick={this.handleAddCustomerForm}>Add Customer</button>}
+            <button className="addCustomerBtn" onClick={this.handleAddCustomerForm}>Add Customer</button>}
 
          {customerArrayBool && this.props.customers.map((customerData, key) =>
           (<IndividualCustomer name={customerData.customerName} phone={customerData.phone_number} adderss={customerData.aderss} key={key}/>))}

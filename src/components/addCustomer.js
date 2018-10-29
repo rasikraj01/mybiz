@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/customer.css';
 
 class AddCustomer extends Component {
    constructor(){
@@ -19,7 +20,7 @@ class AddCustomer extends Component {
    }
    render() {
     return (
-      <div>
+      <div className="addCustomer">
          <form onSubmit={this.handleCustomerFormSubmit}>
             <label>Customer Name :</label>
             <input type="text" name="customerName" onChange={this.handleInputChange}/>
@@ -27,7 +28,7 @@ class AddCustomer extends Component {
             <input type="text" name="phoneNumber" onChange={this.handleInputChange}/>
             <label>Adderss :</label>
             <input type="text" name="adderss" onChange={this.handleInputChange}/>
-            <input type="submit" name="submit_customer_Data"/>
+            <input className="addCustomerBtn" type="submit" name="submit_customer_Data"/>
          </form>
       </div>
     );
