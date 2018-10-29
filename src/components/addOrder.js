@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import '../css/addOrder.css';
 
 
@@ -34,6 +37,8 @@ class addOrders extends Component {
       })
    }
   render() {
+    var currentdate= new Date();
+
     return (
       <div className="addOrderFormContainer">
          <form onSubmit={this.handleFormSubmit}>
@@ -47,8 +52,9 @@ class addOrders extends Component {
               />
             </div>
             <div className="field description">
-              < input type = "text"
+              <input type = "text"
               placeholder = "Description"
+              maxlength="5"
               name = "Description"
               onChange = {
                 this.handleInputChange
@@ -56,12 +62,16 @@ class addOrders extends Component {
               />
             </div>
             <div className="field duedate">
-                < input type = "date"
-                placeholder = "DueDate"
-                name = "dueDate"
-                onChange = {
-                  this.handleInputChange
-                }
+              Due Date:
+                  <DatePicker
+                  style={{width:"70px"}}
+
+                  onChange = {
+                    this.handleInputChange
+                  }
+                  minDate={moment()}
+                  maxDate={moment().add(30, "days")}
+                  placeholderText="max 30days from today"
                 />
             </div>
             <div className="field customername">
