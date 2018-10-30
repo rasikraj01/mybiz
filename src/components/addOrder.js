@@ -28,8 +28,8 @@ class addOrders extends Component {
       dueDate = new Date(dueDate);
       if( dueDate >= date) {
         this.setState({
-          orderDate : date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear(),
-          dueDate: dueDate.getDate() + '.' + (dueDate.getMonth() + 1) + '.' + dueDate.getFullYear(),
+          orderDate : date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(),
+          dueDate: dueDate.getDate() + '/' + (dueDate.getMonth() + 1) + '/' + dueDate.getFullYear(),
           status: 'Pending',
           _id : Math.floor(Math.random() * 10000000)
         },() => {
