@@ -21,7 +21,7 @@ class addOrders extends Component {
       console.log(e.target.value);
       this.setState({ [e.target.name]: e.target.value });
      }
-    
+
    handleFormSubmit = (e) => {
       e.preventDefault();
       let date =  new Date();
@@ -83,12 +83,11 @@ class addOrders extends Component {
                 < select name = "customerName"
                 onChange = {
                     this.handleInputChange
-                  } > {
-                    customer.customerName
-                  } < /option>
+                 } > <option>{
+                    this.customer.customerName
+                  } </option>
                 ))
-                  } <
-                  /select>
+                  } </select>
             </div>
                   <div className="action-container" >
                     <input type="submit" className="action primary" />
@@ -98,5 +97,5 @@ class addOrders extends Component {
             );
           }
         }
-        
+
         export default addOrders;

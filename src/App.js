@@ -9,13 +9,7 @@ import InProgressOrders from './components/inProgressOrders.js';
 import PendingOrders from './components/pendingOrders.js';
 import DeliveredOrders from './components/deliveredOrders.js';
 import Customers from './components/customers.js';
-import Analytics from './components/analytics.js';
 
-/*
-TODO:
-add orders fields: {customer_name, delivery date , order date , description / price} /
-PENDING ENUM
-*/
 
 class App extends Component {
    constructor(){
@@ -168,7 +162,6 @@ class App extends Component {
                   removeCustomer={this.handleCustomerRemove}
                   editCustomer={this.handleCustomerEdit}
                   />} />
-              <Route exact path='/analytics/' component={Analytics}/>
            </div>
       </BrowserRouter>
     );

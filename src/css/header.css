@@ -17,9 +17,7 @@
  }
 
  .nav-list-li:hover a {
-     background-color: #ffffff;
-     border-radius: 5px;
-     color: purple;
+    cursor: pointer;
  }
 
  .nav-list-li a {
