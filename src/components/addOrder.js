@@ -3,8 +3,8 @@ import '../css/addOrder.css';
 
 
 class addOrders extends Component {
-   constructor(){
-      super();
+   constructor(props){
+      super(props);
 
       this.state = {
             _id : null,
@@ -19,20 +19,29 @@ class addOrders extends Component {
    handleInputChange = (e) => {
       console.log(e.target.value);
       this.setState({ [e.target.name]: e.target.value });
-   }
+     }
+    
    handleFormSubmit = (e) => {
       e.preventDefault();
-      //let date =  new Date();
-      this.setState({
-         orderDate : '20-30-2019',
-         status: 'Pending',
-         _id : Math.floor(Math.random() * 10000000)
-      },() => {
-         console.log(this.state);
-         this.props.handleOrderUpdate(this.state);
-         this.props.handleHideForm();
-      })
-   }
+      let date =  new Date();
+      let dueDate = document.getElementById('dueDate').value;
+      dueDate = new Date(dueDate);
+      if( dueDate >= date) {
+        this.setState({
+          orderDate : date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear(),
+          dueDate: dueDate.getDate() + '.' + (dueDate.getMonth() + 1) + '.' + dueDate.getFullYear(),
+          status: 'Pending',
+          _id : Math.floor(Math.random() * 10000000)
+        },() => {
+          console.log(this.state);
+          this.props.handleOrderUpdate(this.state);
+          this.props.handleHideForm();
+        })
+      }
+      else {
+        alert('Wrong due date!')
+      }
+    }
   render() {
     return (
       <div className="addOrderFormContainer">
@@ -60,6 +69,7 @@ class addOrders extends Component {
             </div>
             <div className="field duedate">
                 < input type = "date"
+                id="dueDate"
                 placeholder = "DueDate"
                 name = "dueDate"
                 required
