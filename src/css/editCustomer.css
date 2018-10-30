@@ -1,0 +1,12 @@
+.edit-customer-btn{
+    margin: 0.5rem;
+  padding: 1em 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  background-color: #dd1155;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 5px 0px burlywood;
+}
