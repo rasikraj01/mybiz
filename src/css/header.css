@@ -6,10 +6,6 @@
      background-color: purple;
  }
 
- .switch {
-     display: none;
- }
-
  .nav-list {
      display: flex;
      justify-content: flex-end;
@@ -59,14 +55,8 @@
          font-size: 20px;
          margin-left: 20px;
      }
-     /* .nav-list {
-         display: flex;
-         justify-content: center;
-         width: 100%;
-     } */
      .nav-list-li a {
-         /* display: none; */
-         opacity: 0;
+         display: none;
      }
      .nav-menu-label {
          margin-top: 5px;
@@ -84,6 +74,5 @@
          display: inline;
          font-size: 20px;
          padding: 0;
-         opacity: 1;
      }
  }
