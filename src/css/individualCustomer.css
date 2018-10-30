@@ -12,17 +12,38 @@
 .grid-container {
     display: grid;
     justify-content: start;
-    grid-template-columns: 250px 250px 550px 75px 75px;
+    grid-template-columns: 10vw 18vw 36vw 12vw 12vw;
 }
 
 .row-btn {
-  padding: 10px;
-  font-family: 'Montserrat', sans-serif;
-  border: none;
-  background-color: #dd1155;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 4px 4px 5px 0px burlywood;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    background-color: #dd1155;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 4px 4px 5px 0px burlywood;
+}
+
+@media only screen and (max-width: 426px) {
+    .data {
+        padding: 5px;
+    }
+
+    .grid-container {
+        font-size: 12px;
+    }
+
+    .caption {
+        font-size: 8px;
+    }
+
+    .row-btn {
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 10px;
+    }
 }
