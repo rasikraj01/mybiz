@@ -1,31 +1,89 @@
-.navbar{
-   height: 50px;
-   width: 100%;
-   margin: 0;
-   position: fixed;
-   top: 0;
-   background: purple;
-}
-ul a{
-   line-height: 50px;
-   width: auto;
-   padding: 10px;
-   text-decoration: none;
-   color: white;
-   font-size: 14px;
-   display: inline-block;
-   padding: 0 13px;
-   transition: all .5s;
-}
-ul a:hover{
-   background: #ffffff;
-   color: purple;
-   cursor: pointer;
-}
-ul{
-   line-height: 50px;
-   float: right;
-   margin-right: 5vw;
-   max-height: 50px;
-   overflow: hidden;
-}
+ .navbar {
+     width: 100%;
+     margin: 0;
+     position: fixed;
+     top: 0;
+     background-color: purple;
+ }
+
+ .switch {
+     display: none;
+ }
+
+ .nav-list {
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     height: 50px;
+     margin-right: 5vw;
+     list-style-type: none;
+     transition: all .5s;
+ }
+
+ .nav-list-li:hover a {
+     background-color: #ffffff;
+     border-radius: 5px;
+     color: purple;
+ }
+
+ .nav-list-li a {
+     height: 50px;
+     padding: 0 13px;
+     text-decoration: none;
+     color: white;
+     font-size: 14px;
+     transition: all .5s;
+ }
+
+ .nav-menu,
+ .nav-menu-label {
+     display: none;
+ }
+
+ .burger-menu-line {
+     width: 35px;
+     height: 5px;
+     background-color: white;
+     margin: 6px 0;
+ }
+
+ @media only screen and (max-width: 770px) {
+     .navbar {
+         display: flex;
+         justify-content: space-between;
+         align-content: center;
+     }
+     .nav-menu-label {
+         display: inline;
+         color: #ffffff;
+         font-size: 20px;
+         margin-left: 20px;
+     }
+     /* .nav-list {
+         display: flex;
+         justify-content: center;
+         width: 100%;
+     } */
+     .nav-list-li a {
+         /* display: none; */
+         opacity: 0;
+     }
+     .nav-menu-label {
+         margin-top: 5px;
+     }
+     .nav-menu:checked~.nav-list {
+         align-items: flex-end;
+         flex-direction: column;
+         height: 200px;
+         margin: 0 10px;
+     }
+     .nav-menu:checked~.nav-list .nav-list-li {
+         margin: 5px;
+     }
+     .nav-menu:checked~.nav-list .nav-list-li a {
+         display: inline;
+         font-size: 20px;
+         padding: 0;
+         opacity: 1;
+     }
+ }
