@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddCustomer from './addCustomer';
 import IndividualCustomer from './individualCustomer';
+import '../css/customers.css';
 
 class Customers extends Component {
    constructor(){
@@ -15,25 +16,25 @@ class Customers extends Component {
          addCustomer : true
       })
    }
-   handleNewCustomer = (data) =>{
-      let new_state = this.state.customers;
-      new_state.push(data);
 
-      console.log(new_state);
-      this.setState({
-         addCustomer : false,
-         customers : new_state
-      })
+   handleAddCustomer = (data) => {
+    this.props.handleCustomerUpdate(data);
+    this.setState({addCustomer: false});
    }
-  render() {
-     let customerArrayBool = (this.state.customers === []) ? false : true;
-    return (
-      <div>
-         {(this.state.addCustomer && <AddCustomer updateCustomerList={this.props.handleCustomerUpdate}/>) ||
-            <button onClick={this.handleAddCustomerForm}>Add Customer</button>}
 
-         {customerArrayBool && this.props.customers.map((customerData, key) =>
-          (<IndividualCustomer name={customerData.customerName} phone={customerData.phone_number} adderss={customerData.aderss} key={key}/>))}
+  render() {
+    return (
+      <div className="customer-page">
+         {(this.state.addCustomer && <AddCustomer handleSubmit={this.handleAddCustomer}/>) ||
+            <button className="add-customer-btn" onClick={this.handleAddCustomerForm}>Add Customer</button>}
+
+         {this.props.customers.map((customerData, key) =>
+          (<IndividualCustomer
+            customer={customerData}
+            key={key}
+            handleDelete={this.props.removeCustomer}
+            handleEdit={this.props.editCustomer}
+            />))}
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/addCustomer.css';
 
 class AddCustomer extends Component {
    constructor(){
@@ -6,7 +7,7 @@ class AddCustomer extends Component {
       this.state ={
          customerName :'',
          phoneNumber: '',
-         adderss: ''
+         address: ''
       }
    }
    handleInputChange = (e) => {
@@ -15,19 +16,19 @@ class AddCustomer extends Component {
    handleCustomerFormSubmit = (e) => {
       e.preventDefault();
       console.log(this.state);
-      this.props.updateCustomerList(this.state);
+      this.props.handleSubmit(this.state);
    }
    render() {
     return (
       <div>
          <form onSubmit={this.handleCustomerFormSubmit}>
             <label>Customer Name :</label>
-            <input type="text" name="customerName" onChange={this.handleInputChange}/>
+            <input type="text" name="customerName" onChange={this.handleInputChange} required />
             <label>Phone Number :</label>
-            <input type="text" name="phoneNumber" onChange={this.handleInputChange}/>
+            <input type="text" name="phoneNumber" onChange={this.handleInputChange} required />
             <label>Adderss :</label>
-            <input type="text" name="adderss" onChange={this.handleInputChange}/>
-            <input type="submit" name="submit_customer_Data"/>
+            <input type="text" name="address" onChange={this.handleInputChange} required/>
+            <input type="submit" value="Add" className="customer-submit-btn" name="submit_customer_Data"/>
          </form>
       </div>
     );

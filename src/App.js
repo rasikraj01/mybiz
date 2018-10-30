@@ -52,16 +52,19 @@ class App extends Component {
          ],
       customers:[
          {
+            _id: 10,
             customerName :'rasik',
             phoneNumber: '999999999',
-            adderss: 'this is my address'
+            address: 'this is my address'
          },
          {
+            _id: 11,
             customerName :'rasikraj',
             phoneNumber: '999999999',
-            adderss: 'this is my address'
+            address: 'this is my address'
          }
-      ]
+      ],
+      lastCustomerId: 11,
       }
    }
    handleOrderUpdate = (data) =>{
@@ -74,16 +77,36 @@ class App extends Component {
    }
    handleCustomerUpdate = (data) => {
       let new_customer_state = this.state.customers;
-      new_customer_state.push(data);
-      this.setState({
-         customers: new_customer_state
+      new_customer_state.push(Object.assign(data,{_id: this.state.lastCustomerId + 1}));
+      this.setState((prevState) => ({
+         customers: new_customer_state,
+         lastCustomerId: prevState.lastCustomerId + 1,
       })
+      );
 
    }
+
    handleOrderEdit = (data) => {
-      let on = this.state.orders.findIndex((element) =>  (element._id === data._id));
-      let old = this.state.orders;
-      console.log(this.state.orders[on]);
+    let on = this.state.orders.findIndex((element) =>  (element._id === data._id));
+    let old = this.state.orders;
+    console.log(this.state.orders[on]);
+    old[on] = data;
+    this.setState({
+       orders : old
+    });
+ }
+
+ handleCustomerRemove = (data) => {
+  let customers = this.state.customers.filter(customer => customer._id !== data._id);
+  this.setState({
+    customers
+  });
+}
+
+   handleCustomerEdit = (data) => {
+      let on = this.state.customers.findIndex((customer) =>  (customer._id === data._id));
+      let old = this.state.customers;
+      console.log(this.state.customers[on]);
       old[on] = data;
       this.setState({
          orders : old
@@ -92,7 +115,6 @@ class App extends Component {
 
    handleOrderDelete = (id) => {
     let orders = this.state.orders.filter(order => order._id !== id);
-
     this.setState({
       orders
     });
@@ -142,7 +164,10 @@ class App extends Component {
                 path='/customers/'
                 render={(props) => <Customers
                   customers={this.state.customers}
-                  handleCustomerUpdate={this.handleCustomerUpdate} />} />
+                  handleCustomerUpdate={this.handleCustomerUpdate}
+                  removeCustomer={this.handleCustomerRemove}
+                  editCustomer={this.handleCustomerEdit}
+                  />} />
               <Route exact path='/analytics/' component={Analytics}/>
            </div>
       </BrowserRouter>
