@@ -1,0 +1,52 @@
+.customer{
+    margin: 80px 20px;;
+}
+
+.customer .addCustomerBtn {
+    display: block;
+    margin: 0.5rem 0.5rem 1.5rem;
+    padding: 1em 1.5em;
+    font-family: 'Montserrat',
+    sans-serif;
+    border: none;
+    background-color: #dd1155;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    -webkit-box-shadow: 4px 4px 5px 0px burlywood;
+    box-shadow: 4px 4px 5px 0px burlywood;
+}
+
+.addCustomer .addCustomerBtn {
+    margin: 0.5rem 0;
+    padding: 0.5em 1em;
+    font-family: 'Montserrat',
+    sans-serif;
+    border: none;
+    background-color: #dd1155;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.individualCustomer {
+    font-family: 'open sans';
+    border: solid 1px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    min-width: 250px;
+}
+
+
+.individualCustomer li {
+    list-style: none;
+}
+
+.individualCustomer h4 {
+     font-size: 15px;
+     font-weight: 300;
+}
+

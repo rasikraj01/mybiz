@@ -20,7 +20,7 @@ class AddCustomer extends Component {
    }
    render() {
     return (
-      <div>
+      <div className="addCustomer">
          <form onSubmit={this.handleCustomerFormSubmit}>
             <label>Customer Name :</label>
             <input type="text" name="customerName" onChange={this.handleInputChange} required />
