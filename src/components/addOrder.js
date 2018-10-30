@@ -3,6 +3,7 @@ import '../css/addOrder.css';
 
 
 class addOrders extends Component {
+
    constructor(props){
       super(props);
 
@@ -83,23 +84,19 @@ class addOrders extends Component {
                 onChange = {
                     this.handleInputChange
                   } > {
-                    this.props.customers && this.props.customers.map((customer, key) => ( <
-                      option key = {
-                        key
-                      } > {
-                        customer.customerName
-                      } < /option>
-                    ))
+                    customer.customerName
+                  } < /option>
+                ))
                   } <
                   /select>
             </div>
-            <div className="action-container" >
-              <input type="submit" className="action primary" />
-            </div>
+                  <div className="action-container" >
+                    <input type="submit" className="action primary" />
+                  </div>
          </form>
       </div>
-    );
-  }
-}
-
-export default addOrders;
+            );
+          }
+        }
+        
+        export default addOrders;
