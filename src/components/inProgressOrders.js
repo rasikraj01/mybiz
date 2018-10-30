@@ -15,8 +15,8 @@ class InProgressOrders extends Component {
                   OrderName={order.orderName}
                   Description={order.Description}
                   customerName={order.customerName}
-                  orderDate={order.orderDate}
                   dueDate={order.dueDate}
+                  orderDate={order.orderDate}
                   status={order.status}
                   handleOrderDelete = {this.props.handleOrderDelete}
                />
