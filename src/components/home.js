@@ -32,8 +32,8 @@ class Home extends Component {
                orderName={order.orderName}
                Description={order.Description}
                customerName={order.customerName}
-               orderDate={order.orderDate}
                dueDate={order.dueDate}
+               orderDate={order.orderDate}
                status={order.status}
                customers = {this.props.customers}
                handleOrderEdit = {this.props.handleOrderEdit}

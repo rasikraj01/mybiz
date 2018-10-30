@@ -41,6 +41,7 @@ class addOrders extends Component {
               < input type = "text"
               placeholder = "Name"
               name = "orderName"
+              required
               onChange = {
                 this.handleInputChange
               }
@@ -50,6 +51,8 @@ class addOrders extends Component {
               < input type = "text"
               placeholder = "Description"
               name = "Description"
+              maxLength = {500}
+              required
               onChange = {
                 this.handleInputChange
               }
@@ -59,6 +62,7 @@ class addOrders extends Component {
                 < input type = "date"
                 placeholder = "DueDate"
                 name = "dueDate"
+                required
                 onChange = {
                   this.handleInputChange
                 }
