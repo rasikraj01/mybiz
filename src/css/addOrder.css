@@ -2,6 +2,9 @@ form input[type="text"] {
   font-size: 14px;
   font-family: "open sans";
 }
+body{
+background-color: #ffffff
+}
 
 .addOrderFormContainer {
   width: 30%;
