@@ -1,0 +1,25 @@
+img{
+    width : 30%;
+    float : left;
+    margin : 1.66% ;
+    border-radius: 50%;
+    transition: all ease-in 0.5s ;
+}
+img:hover{
+     transform: scale(1.1);
+     border: 5px solid grey;
+     box-shadow: 50px 20px grey;
+     
+}
+  
+p{
+    font-family: Raleway;
+    Margin-left: 1.66%;
+    font-size: 23px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-bottom:3px solid #f1f1f1;
+    width: 30%;
+    padding-bottom: 20px;
+
+}
